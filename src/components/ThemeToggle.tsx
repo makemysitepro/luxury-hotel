@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
@@ -70,3 +72,4 @@ const ThemeToggle = () => {
 }
 
 export default ThemeToggle
+

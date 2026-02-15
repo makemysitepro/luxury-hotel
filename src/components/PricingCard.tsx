@@ -1,5 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 interface PricingCardProps {
   name: string
@@ -50,7 +52,7 @@ const PricingCard = ({ name, price, period, features, popular = false, delay = 0
         ))}
       </ul>
       <Link
-        to="/contact"
+        href="/contact"
         className={`block text-center font-semibold px-8 py-3 rounded-lg transition-all duration-300 ${popular
             ? 'bg-accent hover:bg-accent-dark text-white shadow-gold'
             : 'bg-primary hover:bg-primary-light text-white shadow-royal'
@@ -63,3 +65,4 @@ const PricingCard = ({ name, price, period, features, popular = false, delay = 0
 }
 
 export default PricingCard
+

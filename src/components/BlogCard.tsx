@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface BlogCardProps {
@@ -47,3 +49,4 @@ const BlogCard = ({ title, excerpt, date, author, category, delay = 0 }: BlogCar
 }
 
 export default BlogCard
+

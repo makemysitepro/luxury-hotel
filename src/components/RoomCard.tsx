@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface RoomCardProps {
@@ -43,3 +45,4 @@ const RoomCard = ({ title, description, price, image, features, delay = 0 }: Roo
 }
 
 export default RoomCard
+

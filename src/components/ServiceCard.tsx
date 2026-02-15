@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface ServiceCardProps {
@@ -27,3 +29,4 @@ const ServiceCard = ({ icon, title, description, delay = 0 }: ServiceCardProps) 
 }
 
 export default ServiceCard
+

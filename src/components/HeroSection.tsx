@@ -1,5 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 interface HeroSectionProps {
   title: string
@@ -8,7 +10,6 @@ interface HeroSectionProps {
   primaryButtonLink?: string
   secondaryButtonText?: string
   secondaryButtonLink?: string
-  showAnimation?: boolean
 }
 
 const HeroSection = ({
@@ -18,7 +19,6 @@ const HeroSection = ({
   primaryButtonLink = '/contact',
   secondaryButtonText = 'Learn More',
   secondaryButtonLink = '/about',
-  showAnimation = true,
 }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center gradient-royal overflow-hidden">
@@ -73,7 +73,7 @@ const HeroSection = ({
               className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4"
             >
               <Link
-                to={primaryButtonLink}
+                href={primaryButtonLink}
                 className="group relative bg-accent hover:bg-accent-dark text-white font-bold px-12 py-5 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-gold hover:scale-110 text-lg overflow-hidden"
               >
                 <span className="relative z-10">{primaryButtonText}</span>
@@ -81,7 +81,7 @@ const HeroSection = ({
               </Link>
 
               <Link
-                to={secondaryButtonLink}
+                href={secondaryButtonLink}
                 className="group bg-white/10 hover:bg-white/20 text-white font-bold px-12 py-5 rounded-xl transition-all duration-300 backdrop-blur-lg border-2 border-white/30 hover:border-white/60 text-lg hover:scale-110 shadow-xl"
               >
                 {secondaryButtonText}
@@ -135,3 +135,4 @@ const HeroSection = ({
 }
 
 export default HeroSection
+

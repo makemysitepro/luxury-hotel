@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface TestimonialCardProps {
@@ -42,3 +44,4 @@ const TestimonialCard = ({ name, role, company, content, rating, delay = 0 }: Te
 }
 
 export default TestimonialCard
+

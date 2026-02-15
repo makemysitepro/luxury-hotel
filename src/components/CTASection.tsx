@@ -1,5 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 interface CTASectionProps {
   title: string
@@ -36,14 +38,14 @@ const CTASection = ({
           <p className="text-xl text-theme-secondary mb-10 leading-relaxed">{description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to={primaryButtonLink}
+              href={primaryButtonLink}
               className="bg-accent hover:bg-accent-dark text-white font-semibold px-10 py-4 rounded-lg transition-all duration-300 shadow-gold hover:scale-105"
             >
               {primaryButtonText}
             </Link>
             {secondaryButtonText && secondaryButtonLink && (
               <Link
-                to={secondaryButtonLink}
+                href={secondaryButtonLink}
                 className="btn-outline"
               >
                 {secondaryButtonText}
@@ -57,3 +59,4 @@ const CTASection = ({
 }
 
 export default CTASection
+

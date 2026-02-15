@@ -1,0 +1,2 @@
+:HL["/demo/luxury-hotel/_next/static/chunks/b22327dc3cfa27df.css","style"]
+0:{"buildId":"ReqA1WUjiZ_KvgzPMZRQ6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"faq","paramType":null,"paramKey":"faq","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

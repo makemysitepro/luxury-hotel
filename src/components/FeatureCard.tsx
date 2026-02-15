@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface FeatureCardProps {
@@ -29,3 +31,4 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps) 
 }
 
 export default FeatureCard
+

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -56,7 +56,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-theme-secondary hover:text-accent transition-colors duration-300 flex items-center group"
                   >
                     <span className="mr-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -73,7 +73,7 @@ const Footer = () => {
               {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-theme-secondary hover:text-accent transition-colors duration-300 flex items-center group"
                   >
                     <span className="mr-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -130,13 +130,13 @@ const Footer = () => {
               © {currentYear} Royal Enterprise. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-theme-tertiary hover:text-accent transition-colors">
+              <Link href="/privacy" className="text-theme-tertiary hover:text-accent transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-theme-tertiary hover:text-accent transition-colors">
+              <Link href="/terms" className="text-theme-tertiary hover:text-accent transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/cookies" className="text-theme-tertiary hover:text-accent transition-colors">
+              <Link href="/cookies" className="text-theme-tertiary hover:text-accent transition-colors">
                 Cookie Policy
               </Link>
             </div>

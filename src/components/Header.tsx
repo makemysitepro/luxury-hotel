@@ -1,12 +1,15 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +21,7 @@ const Header = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
-  }, [location])
+  }, [pathname])
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -44,7 +47,7 @@ const Header = () => {
     >
       <div className="container-custom px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-2 group">
             <div className="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-lg flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300 shadow-md">
               <span className="text-xl font-bold text-white">🏨</span>
             </div>
@@ -58,14 +61,14 @@ const Header = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
-                className={`px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 relative group ${location.pathname === link.path
+                href={link.path}
+                className={`px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 relative group ${pathname === link.path
                   ? 'text-accent bg-accent/10'
                   : 'text-theme-primary hover:text-accent hover:bg-accent/5'
                   }`}
               >
                 {link.name}
-                {location.pathname === link.path && (
+                {pathname === link.path && (
                   <motion.div
                     layoutId="activeNav"
                     className="absolute bottom-0 left-0 right-0 h-1 bg-accent rounded-t-full"
@@ -79,7 +82,7 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
-            <Link to="/contact" className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-gold hover:scale-105 text-sm">
+            <Link href="/contact" className="bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-gold hover:scale-105 text-sm">
               Book Now
             </Link>
           </div>
@@ -122,8 +125,8 @@ const Header = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
-                  to={link.path}
-                  className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 ${location.pathname === link.path
+                  href={link.path}
+                  className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 ${pathname === link.path
                     ? 'bg-accent text-white'
                     : 'text-theme-primary hover:bg-accent/5'
                     }`}
@@ -131,7 +134,7 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contact" className="btn-primary mt-4">
+              <Link href="/contact" className="btn-primary mt-4">
                 Book Now
               </Link>
             </nav>
@@ -143,3 +146,4 @@ const Header = () => {
 }
 
 export default Header
+

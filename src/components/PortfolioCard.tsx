@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
 interface PortfolioCardProps {
@@ -42,3 +44,4 @@ const PortfolioCard = ({ title, category, description, delay = 0 }: PortfolioCar
 }
 
 export default PortfolioCard
+
